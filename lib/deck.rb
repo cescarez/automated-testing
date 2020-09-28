@@ -19,11 +19,17 @@ class Deck
     return all_cards
   end
 
-  def draw
-    # returns a card
+  def draw(num = 1)
+    raise ArgumentError, "Not enough cards in the deck." if num > count
+
+    return @cards.pop(num)
   end
 
   def shuffle
-    # shuffles the deck
+    @cards.shuffle!
+  end
+
+  def count
+    return @cards.count
   end
 end
