@@ -1,10 +1,10 @@
 
 # card.rb
+NUMS = (1..13).to_a
+SUITS = [:spades, :clubs, :diamonds, :hearts]
 
 class Card
   attr_reader :value, :suit
-  NUMS = (1..13).to_a
-  SUITS = [:spades, :clubs, :diamonds, :hearts]
 
   def initialize(value, suit)
     @value = NUMS.include?(value) ? value : (raise ArgumentError, "Invalid value entered for Card.")

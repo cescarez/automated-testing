@@ -11,8 +11,8 @@ class Deck
   end
 
   def generate_all_cards
-    all_cards = Card::NUMS.flat_map do |value|
-      Card::SUITS.flat_map do |suit|
+    all_cards = NUMS.flat_map do |value|
+      SUITS.flat_map do |suit|
         Card.new(value, suit)
       end
     end
