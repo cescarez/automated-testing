@@ -9,25 +9,24 @@ class Card
   def initialize(value, suit)
     @value = NUMS.include?(value) ? value : (raise ArgumentError, "Invalid value entered for Card.")
     @suit = SUITS.include?(suit) ? suit : (raise ArgumentError, "Invalid suit entered for Card.")
-    @number = human_readable(value)
   end
 
   def to_s
-    return "#{@number} of #{@suit.to_s}"
+    return "#{human_readable(@value)} of #{@suit.to_s}"
   end
 
   def human_readable(value)
     case value
     when 1
-      @number = "Ace"
+      return "Ace"
     when 2..10
-      @number = value
+      return value
     when 11
-      @number = "Jack"
+      return "Jack"
     when 12
-      @number = "Queen"
+      return "Queen"
     when 13
-      @number = "King"
+      return "King"
     end
   end
 
